@@ -1,6 +1,21 @@
 
 # AWS CI/CD Pipeline with CodePipeline, CodeBuild, and Elastic Beanstalk
 
+```mermaid
+graph TD
+    A[Source Repository] -->|Source Code| B[CodePipeline]
+    B -->|Build Project| C[CodeBuild]
+    C -->|Artifacts| D[Elastic Beanstalk]
+
+    subgraph AWS Pipeline
+        B
+        C
+        D
+    end
+
+    style AWS Pipeline fill:#f9f,stroke:#333,stroke-width:2px
+```
+
 This project demonstrates how to build a basic Continuous Integration and Continuous Deployment (CI/CD) pipeline using AWS CodePipeline and CodeBuild. The pipeline will automatically trigger when code changes are pushed to a GitHub repository, build the code, and deploy it to an Elastic Beanstalk environment.
 
 ## Project Overview
